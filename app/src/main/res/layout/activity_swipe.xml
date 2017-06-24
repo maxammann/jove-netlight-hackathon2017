@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daprlabs.aaron.swipedeck.layouts.SwipeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.daprlabs.aaron.swipedeck.SwipeDeck
+        android:id="@+id/swipe_deck"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="20dp"
+        swipedeck:card_spacing="15dp"
+        swipedeck:max_visible="3"
+        swipedeck:swipe_enabled="true" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/message_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            app:srcCompat="@android:drawable/ic_dialog_email" />
+    </LinearLayout>
+
+
+</com.daprlabs.aaron.swipedeck.layouts.SwipeLinearLayout>
