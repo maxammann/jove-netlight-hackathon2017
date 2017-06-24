@@ -7,20 +7,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hackathon.jove.R;
 
-public class CardsAdapter extends BaseAdapter {
+class DummyCardsAdapter extends BaseAdapter {
 
-    private List<String> data;
+    private List<String> data = new ArrayList<>();
     private Context context;
 
-    public CardsAdapter(List<String> data, Context context) {
-        this.data = data;
+    DummyCardsAdapter(Context context) {
         this.context = context;
+
+        data.add("0");
+        data.add("1");
+        data.add("2");
+        data.add("3");
+        data.add("4");
     }
 
     @Override
@@ -39,26 +44,22 @@ public class CardsAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-
-        View v = convertView;
-        if (v == null) {
+    public View getView(final int position, View view, ViewGroup parent) {
+        if (view == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            // normally use a viewholder
-            v = inflater.inflate(R.layout.card, parent, false);
+            view = inflater.inflate(R.layout.card, parent, false);
         }
 
-        ((CardView) v).setPreventCornerOverlap(true);
+        CardView cardView = (CardView) view;
+        cardView.setPreventCornerOverlap(true);
 
-
-
-        v.setOnClickListener(new View.OnClickListener() {
+        cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("Layer type: ", Integer.toString(v.getLayerType()));
                 Log.i("Hardware Accel type:", Integer.toString(View.LAYER_TYPE_HARDWARE));
             }
         });
-        return v;
+        return cardView;
     }
 }
