@@ -44,7 +44,7 @@ public class SwipeActivity extends AppCompatActivity {
 
             @Override
             public void cardSwipedRight(long stableId) {
-                if (Math.random() > 0.9) {
+                if (Math.random() > 0.9) {  // <--- Super scientific machine learning
                     new SweetAlertDialog(SwipeActivity.this, SweetAlertDialog.SUCCESS_TYPE)
                             .setTitleText("You got a match!")
                             .setContentText("...but we'll ignore it! :) Just in case!")
