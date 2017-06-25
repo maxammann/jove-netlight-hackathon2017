@@ -28,6 +28,6 @@ abstract class JsonHttpTask<T> extends HttpTask<T> {
 
     public TreeNode getResult(String response) throws IOException {
         JsonParser parser = jsonFactory.createParser(response);
-        return mapper.readTree(parser).path("result");
+        return mapper.readTree(parser).path("response");
     }
 }
